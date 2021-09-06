@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using System;
 
 namespace Tamagotchi
 {
@@ -6,7 +7,18 @@ namespace Tamagotchi
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tama Tamagotchi = new Tama();
+
+            Console.WriteLine("What is the name of your Tamagotchi?");
+            Tamagotchi.name = Console.ReadLine();
+
+
+
+
+
+
+
+            Console.ReadLine();
         }
     }
 }
