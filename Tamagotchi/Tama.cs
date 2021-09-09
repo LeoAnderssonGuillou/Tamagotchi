@@ -14,12 +14,14 @@ namespace Tamagotchi
 
         public void Feed()
         {
+            Console.WriteLine($"You feed {name}");
             hunger--;
         }
 
         public void Hi()
         {
-            Console.WriteLine(words[generator.Next(0, words.Count)]);
+            Console.WriteLine($"You say hi to {name}");
+            Console.WriteLine("It says " + words[generator.Next(0, words.Count)] + " back!");
             ReduceBoredom();
         }
 

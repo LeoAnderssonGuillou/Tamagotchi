@@ -19,18 +19,21 @@ namespace Tamagotchi
             switch (input)
             {
                 case 1:
-                    Console.WriteLine("bro");
+                    Tamagotchi.Hi();
                     break;
                 case 2:
-                    Console.WriteLine("bro");
+                    Tamagotchi.Feed();
                     break;
                 case 3:
-                    Console.WriteLine("bro");
+                    Console.WriteLine("Enter the word you want to teach:");
+                    Tamagotchi.Teach(Console.ReadLine());
                     break;
                 case 4:
-                    Console.WriteLine("bro");
+                    Console.WriteLine("You do nothing");
                     break;
             }
+            Tamagotchi.Tick();
+            Tamagotchi.PrintStats();
 
 
 
