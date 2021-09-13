@@ -8,32 +8,40 @@ namespace Tamagotchi
         static void Main(string[] args)
         {
             Tama Tamagotchi = new Tama();
+            Tamagotchi.Setup();
+
 
             Console.WriteLine("What is the name of your Tamagotchi?");
             Tamagotchi.name = Console.ReadLine();
 
-            Console.WriteLine("What do you want to do?");
-            Console.WriteLine("Say hello[1], Feed[2], Teach word[3], Do noting[4]");
 
-            int input = GetValidInput();
-            switch (input)
+            while (Tamagotchi.GetAlive())
             {
-                case 1:
-                    Tamagotchi.Hi();
-                    break;
-                case 2:
-                    Tamagotchi.Feed();
-                    break;
-                case 3:
-                    Console.WriteLine("Enter the word you want to teach:");
-                    Tamagotchi.Teach(Console.ReadLine());
-                    break;
-                case 4:
-                    Console.WriteLine("You do nothing");
-                    break;
+                Console.WriteLine("What do you want to do?");
+                Console.WriteLine("Say hello[1], Feed[2], Teach word[3], Do noting[4]");
+
+                int input = GetValidInput();
+                switch (input)
+                {
+                    case 1:
+                        Tamagotchi.Hi();
+                        break;
+                    case 2:
+                        Tamagotchi.Feed();
+                        break;
+                    case 3:
+                        Console.WriteLine("Enter the word you want to teach:");
+                        Tamagotchi.Teach(Console.ReadLine());
+                        break;
+                    case 4:
+                        Console.WriteLine("You do nothing");
+                        break;
+                }
+                Console.WriteLine();
+                Tamagotchi.Tick();
+                Tamagotchi.PrintStats();
+                Console.WriteLine();
             }
-            Tamagotchi.Tick();
-            Tamagotchi.PrintStats();
 
 
 
