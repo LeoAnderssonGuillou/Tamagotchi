@@ -13,7 +13,7 @@ namespace Tamagotchi
         Random generator = new Random();
         public string name;
 
-        public void Setup()
+        public Tama()
         {
             words.Add("hi");
         }
@@ -62,11 +62,11 @@ namespace Tamagotchi
 
             if (isAlive == true)
             {
-                Console.WriteLine("Tamagotchi is alive");
+                Console.WriteLine($"{name} is alive");
             }
             else
             {
-                Console.WriteLine("Tamagotchi is dead");
+                Console.WriteLine($"{name} is dead");
             }
         }
 

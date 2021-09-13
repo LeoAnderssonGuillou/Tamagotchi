@@ -8,7 +8,6 @@ namespace Tamagotchi
         static void Main(string[] args)
         {
             Tama Tamagotchi = new Tama();
-            Tamagotchi.Setup();
 
 
             Console.WriteLine("What is the name of your Tamagotchi?");
@@ -42,11 +41,6 @@ namespace Tamagotchi
                 Tamagotchi.PrintStats();
                 Console.WriteLine();
             }
-
-
-
-
-
 
             Console.ReadLine();
         }
