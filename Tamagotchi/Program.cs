@@ -15,9 +15,9 @@ namespace Tamagotchi
             while (Tamagotchi.GetAlive())
             {
                 Utilities.WriteNice("What do you want to do?");
-                Console.WriteLine("Say hello[1], Feed[2], Teach word[3], Do noting[4]");
+                Console.WriteLine("Say hello[1]  Feed[2]  Teach word[3]  Do noting[4]");
 
-                int input = GetValidInput();
+                int input = Utilities.GetValidInput();
                 switch (input)
                 {
                     case 1:
@@ -47,24 +47,6 @@ namespace Tamagotchi
 
             Console.ReadLine();
         }
-
-
-        static int GetValidInput()
-        {
-            int action = 1;
-            bool success = false;
-            while (!success)
-            {
-                success = int.TryParse(Console.ReadLine(), out action);
-                if (success == false || action < 1 || action > 4)
-                {
-                    Console.WriteLine("Invalid input. Please enter a number 1-4");
-                    success = false;
-                }
-            }
-            return action;
-        }
-
 
     }
 }
