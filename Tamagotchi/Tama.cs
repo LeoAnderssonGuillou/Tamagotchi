@@ -20,20 +20,24 @@ namespace Tamagotchi
 
         public void Feed()
         {
-            Console.WriteLine($"You feed {name}");
+            Utilities.WriteNice($"You feed {name}");
+            Console.ReadLine();
             hunger -= 2;
         }
 
         public void Hi()
         {
-            Console.WriteLine($"You say hi to {name}");
-            Console.WriteLine("It says " + words[generator.Next(0, words.Count)] + " back!");
+            Utilities.WriteNice($"You say hi to {name}");
+            Utilities.WriteNice("It says " + words[generator.Next(0, words.Count)] + " back!");
+            Console.ReadLine();
             ReduceBoredom();
         }
 
         public void Teach(string word)
         {
             words.Add(word);
+            Utilities.WriteNice($"{name} learned a new word!");
+            Console.ReadLine();
             ReduceBoredom();
         }
 

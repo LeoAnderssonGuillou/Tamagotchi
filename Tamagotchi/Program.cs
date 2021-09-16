@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using System;
+﻿using System;
 
 namespace Tamagotchi
 {
@@ -9,14 +8,13 @@ namespace Tamagotchi
         {
             Tama Tamagotchi = new Tama();
 
-
-            Console.WriteLine("What is the name of your Tamagotchi?");
+            Utilities.WriteNice("What is the name of your Tamagotchi?");
             Tamagotchi.name = Console.ReadLine();
 
 
             while (Tamagotchi.GetAlive())
             {
-                Console.WriteLine("What do you want to do?");
+                Utilities.WriteNice("What do you want to do?");
                 Console.WriteLine("Say hello[1], Feed[2], Teach word[3], Do noting[4]");
 
                 int input = GetValidInput();
@@ -24,16 +22,21 @@ namespace Tamagotchi
                 {
                     case 1:
                         Tamagotchi.Hi();
+                        Console.Clear();
                         break;
                     case 2:
                         Tamagotchi.Feed();
+                        Console.Clear();
                         break;
                     case 3:
-                        Console.WriteLine("Enter the word you want to teach:");
+                        Utilities.WriteNice("Enter the word you want to teach:");
                         Tamagotchi.Teach(Console.ReadLine());
+                        Console.Clear();
                         break;
                     case 4:
-                        Console.WriteLine("You do nothing");
+                        Utilities.WriteNice("You do nothing");
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                 }
                 Console.WriteLine();
@@ -61,5 +64,7 @@ namespace Tamagotchi
             }
             return action;
         }
+
+
     }
 }
